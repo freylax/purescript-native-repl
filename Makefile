@@ -58,10 +58,10 @@ unspecified:
 	@echo
 
 debug: codegen
-	@$(MAKE) $(BIN) CFLAGS+=$(DEBUG) CXXFLAGS+=$(DEBUG)
+	@$(MAKE) $(BIN_DIR)/$(BIN) CFLAGS+=$(DEBUG) CXXFLAGS+=$(DEBUG)
 
 release: codegen
-	@$(MAKE) $(BIN) CFLAGS+=$(RELEASE) CXXFLAGS+=$(RELEASE)
+	@$(MAKE) $(BIN_DIR)/$(BIN) CFLAGS+=$(RELEASE) CXXFLAGS+=$(RELEASE)
 
 PURESCRIPT_PKG_SRCS=$(foreach d,$(PACKAGE_SOURCES),$(call rwildcard,$(firstword $(subst *, ,$(d))),*.purs))
 PURESCRIPT_SRCS=$(call rwildcard,$(SRC)/,*.purs)
